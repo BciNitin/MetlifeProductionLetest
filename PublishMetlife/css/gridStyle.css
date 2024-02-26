@@ -1,0 +1,45 @@
+/************ GridView Styles **************/
+.mGrid {
+    background-color: #fff;
+    margin: 5px 0 10px 0;
+    border: solid 1px #525252;
+    border-collapse: collapse;
+    width: 100%;
+    white-space: nowrap;
+}  
+.mGrid td {   
+    padding: 2px;   
+    border: solid 1px #c1c1c1;   
+    color: #515151;
+    font-family:Helvetica, Arial;
+    font-size:11px;  
+    font-style: normal;
+	font-variant: normal;
+	text-transform: none; 
+}  
+.mGrid th  
+{  
+    padding: 4px 2px;   
+    color: #ffffff;
+    background: #575757 url(grd_head.png) repeat-x top;   
+    border-left: solid 1px #525252;
+    font-size: 12px;
+    text-transform:none;
+    font-variant:normal;
+}  
+.mGrid .alt { background: #F8F8FF url(grd_alt.png) repeat-x top; }  
+.mGrid .pgr { background: #575757 url(grd_pgr.png) repeat-x top; }  
+.mGrid .pgr table { margin: 5px 0; }  
+.mGrid .pgr td {   
+    border-width: 0;   
+    padding: 0 6px;   
+    border-left: solid 1px #666;   
+    font-weight: bold;   
+    color: #fff;   
+    line-height: 11px;   
+    font-style: normal;
+	font-variant: normal;
+	text-transform: none;
+ }     
+.mGrid .pgr a { color: #B0B0B0; text-decoration: none; }  
+.mGrid .pgr a:hover { color: #FFFFFF; text-decoration: underline; }

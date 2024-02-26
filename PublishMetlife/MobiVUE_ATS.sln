@@ -1,0 +1,45 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31624.102
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "MobiVUE_ATS", "..\MobiVUE_ATS", "{0AD12D73-94AA-4B75-866F-F0D411865281}"
+	ProjectSection(WebsiteProperties) = preProject
+		SccProjectName = "SAK"
+		SccAuxPath = "SAK"
+		SccLocalPath = "SAK"
+		SccProvider = "SAK"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
+		Debug.AspNetCompiler.VirtualPath = "/MobiVUE_ATS"
+		Debug.AspNetCompiler.PhysicalPath = "..\MobiVUE_ATS\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\MobiVUE_ATS\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/MobiVUE_ATS"
+		Release.AspNetCompiler.PhysicalPath = "..\MobiVUE_ATS\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\MobiVUE_ATS\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "56656"
+		SlnRelativePath = "..\MobiVUE_ATS\"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0AD12D73-94AA-4B75-866F-F0D411865281}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0AD12D73-94AA-4B75-866F-F0D411865281}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F84C019E-30A2-4A10-A3F4-BDBD3FA43364}
+	EndGlobalSection
+EndGlobal

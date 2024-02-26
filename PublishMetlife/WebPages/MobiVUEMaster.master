@@ -1,0 +1,210 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MobiVUEMaster.master.cs"
+    Inherits="MobiVUEMaster" %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+    <meta http-equiv="X-UA-Compatible" content="IE=9" />
+    <title>Asset Tracking System - Metlife</title>
+   
+    <!-- Styles -->
+    <link rel="Shortcut Icon" href="../images/BasicScan.ico" />
+    <link rel="stylesheet" href="../css/style.css" type="text/css" />
+    <link rel="stylesheet" href="../css/gridStyle.css" type="text/css" />
+    <link rel="stylesheet" href="../css/menu.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../css/stickytooltip.css" />
+    <!-- Javascript -->
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+
+    <script type="text/javascript" src="../js/stickytooltip.js"></script>
+
+    <script type="text/javascript" src="../js/jquery-latest.min.js"></script>
+
+    <script type="text/javascript" src="../js/jquery.js"></script>
+
+    <script type="text/javascript" src="../js/dropmenu.js"></script>
+
+    <script type="text/javascript" language="javascript">
+        function noBack() {
+            window.history.forward(1);
+            if ($.browser.msie)
+                $(document).keydown(function (e) { if (e.keyCode == 8) window.event.keyCode = 0; });
+        }
+        /*
+        var sessionTimeoutWarning = 10;
+        var sessionTimeout = 30;
+        var timeOnPageLoad = new Date();
+
+        //For warning
+        //setTimeout('SessionWarning()', parseInt(sessionTimeoutWarning) * 60 * 1000);
+        //To redirect to the Session Expired Page
+        function SessionTimeout() {
+        setTimeout('RedirectToSessionExpiredPage()', parseInt(sessionTimeout) * 60 * 1000);
+        }
+
+        //Session Warning
+        function SessionWarning() {
+        var minutesForExpiry = (parseInt(sessionTimeout) - parseInt(sessionTimeoutWarning));
+        var message = "Your session will expire in another few minutes! Please Save the data before the session expires.";
+        alert(message);
+        var currentTime = new Date();
+        var timeForExpiry = timeOnPageLoad.setMinutes(timeOnPageLoad.getMinutes() + parseInt(sessionTimeout));
+            
+        if (Date.parse(currentTime) > timeForExpiry) {
+        alert("Session expired !!!");
+        window.location = "SessionExpired.aspx";
+        noBack();
+        }
+        }
+
+        //Session timeout
+        function RedirectToSessionExpiredPage() {
+        alert("Session expired !!!");
+        window.location = "SessionExpired.aspx";
+        noBack();
+        }
+        */
+        $(document).ready(function () {
+            $("#nav-one").dropmenu();
+        });
+    </script>
+     <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div#menu {
+            margin: 0px auto;
+            width: 75%;
+        }
+
+        .all-asset-display-none {
+            display: none;
+        }
+    </style>
+
+    <% if (Convert.ToString(Session["COMPANY"]) == "IT")
+        { %>
+    <style type="text/css">
+        .IT-display {
+            display: table-row;
+        }
+    </style>
+    <% }
+        else
+        { %>
+
+    <style type="text/css">
+        .Facilities-display {
+            display: table-row;
+        }
+    </style>
+
+    <% } %>
+</head>
+<body class="gray" onload="noBack();">
+    <form id="form1" runat="server">
+        <div id="pageFrame" align="center">
+            <div id="pageContainer" align="left">
+                <div id="topnav"  >
+                    <div id="topnavInner">
+                        <div id="logo">
+                            <img src="../images/MetLife.png" alt="CompanyLogo" />
+                        </div>
+                    </div>
+                    <div id="menu" runat="server">
+                        <ul id="nav-one" class="dropmenu">
+                            <li><a href="Home.aspx">Home</a> </li>
+                             <li><a href="Dashboard.aspx">Dashboard</a> </li>
+                            <li><a href="#">Masters</a>
+                                <ul style="z-index: 1; display: none; width: 205px;">
+                                    <li><a href="VendorMaster.aspx">Vendor Master</a></li>
+                                    <li><a href="SiteMaster.aspx">Site Master</a></li>
+                                    <li><a href="FloorMaster.aspx">Floor Master</a></li>
+                                    <li><a href="StoreMaster.aspx">Store Master</a></li>
+                                    <li><a href="MailMaster.aspx">Mail Master</a></li> 
+                                    <li><a href="TrainingorMeetingMaster.aspx">Training/Meeting Master</a></li>
+                                    <li><a href="UserGroupMapping.aspx">User Group Mapping</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Asset</a>
+                                <ul style="z-index: 90; display: none; width: 250px;">
+                                    <li class="all-asset-display-none Facilities-display"><a href="AssetAcq.aspx">Asset Acquisition</a></li>
+                                    <li class="all-asset-display-none IT-display"><a href="AssetAcqIT.aspx">Asset Acquisition</a></li>
+                                    <li><a href="AssetAllocation.aspx">Asset Allocation</a></li>
+                                    <li><a href="AssetDeAllocation.aspx">Asset  De-Allocation</a></li>
+                                    <li><a href="GenerateGatePass.aspx">IUT - Location to Location</a></li>
+                                    <li><a href="AssetReplacement.aspx">Asset Replacement</a></li>
+                                    <li><a href="SoldScrappedAssets.aspx">Scrapped</a></li>
+                                    <li><a href="Reconcilation.aspx">Asset Reconcilation</a></li>
+                                    <li><a href="IUTReceived.aspx">IUT - Receiving</a></li>
+                                    <li><a href="InvoiceFileUpload.aspx">Invoice File Upload</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Reports</a>
+                                <ul style="z-index: 1; display: none;  width: 186px;">
+                                    <li class="all-asset-display-none IT-display"><a href="Reports.aspx?ReportID=22">View Assets List</a></li>
+                                    <li class="all-asset-display-none Facilities-display"><a href="Reports.aspx?ReportID=23">View Assets List</a></li>
+                                    <li class="all-asset-display-none IT-display"><a href="Reports.aspx?ReportID=6">Asset Acquisition</a></li>
+                                    <li class="all-asset-display-none Facilities-display"><a href="Reports.aspx?ReportID=7">Asset Acquisition</a></li>
+                                    <li class="all-asset-display-none IT-display"><a href="Reports.aspx?ReportID=8">Asset Allocation</a></li>
+                                    <li class="all-asset-display-none Facilities-display"><a href="Reports.aspx?ReportID=9">Asset Allocation</a></li>
+                                    <li class="all-asset-display-none IT-display"><a href="Reports.aspx?ReportID=24">Asset Allocation History</a></li>
+                                    <li class="all-asset-display-none Facilities-display"><a href="Reports.aspx?ReportID=25">Asset Allocation History</a></li>
+                                    <li class="all-asset-display-none IT-display"><a href="Reports.aspx?ReportID=10">Asset Deallocation</a></li>
+                                    <li class="all-asset-display-none Facilities-display"><a href="Reports.aspx?ReportID=11">Asset Deallocation</a></li>
+                                    <li class="all-asset-display-none IT-display"><a href="Reports.aspx?ReportID=12">IUT Location</a></li>
+                                    <li class="all-asset-display-none Facilities-display"><a href="Reports.aspx?ReportID=13">IUT Location</a></li>
+                                    <li class="all-asset-display-none IT-display"><a href="Reports.aspx?ReportID=14">Asset Replacement</a></li>
+                                    <li class="all-asset-display-none Facilities-display"><a href="Reports.aspx?ReportID=15">Asset Replacement</a></li>
+                                    <li class="all-asset-display-none IT-display"><a href="Reports.aspx?ReportID=16">Asset Scrap</a></li>
+                                    <li class="all-asset-display-none Facilities-display"><a href="Reports.aspx?ReportID=17">Asset Scrap</a></li>
+                                    <li class="all-asset-display-none IT-display"><a href="Reports.aspx?ReportID=18">IUT Receiving</a></li>
+                                    <li class="all-asset-display-none Facilities-display"><a href="Reports.aspx?ReportID=19">IUT Receiving</a></li>
+                                    <li class="all-asset-display-none IT-display"><a href="Reports.aspx?ReportID=20">Invoice File Upload</a></li>
+                                    <li class="all-asset-display-none Facilities-display"><a href="Reports.aspx?ReportID=21">Invoice File Upload</a></li>
+                                     <li class="all-asset-display-none IT-display"><a href="Reports.aspx?ReportID=26">Store Movement Report</a></li>
+                                   <%-- <li class="all-asset-display-none Facilities-display"><a href="Reports.aspx?ReportID=27">Store Movement Report</a></li>--%>
+                                    <%-- <li class="all-asset-display-none IT-display"><a href="Reports.aspx?ReportID=28">Kiosk Movement Report</a></li>--%>
+                                    <li class="all-asset-display-none Facilities-display"><a href="Reports.aspx?ReportID=29">Kiosk Movement Report</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="LogOut.aspx">Sign Out</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+                <br />
+                <br />
+                <div id="footer">
+                    <div class="copyright">
+                        <span>Copyright &copy; 2014. All Rights Reserved.</span>
+                    </div>
+                    <div class="designedby">
+                        <span>Designed & Developed By <a href="http://www.mobivue.in" target="_blank"
+                            data-tooltip="sticky1">BCIL</a></span>
+                        <div id="mystickytooltip" class="stickytooltip">
+                            <div style="padding: 5px 5px 0px 5px;">
+                                <div id="sticky1" class="atip">
+                                    <img alt="BCIL" src="../images/BCILLogo.png" />
+                                </div>
+                            </div>
+                            <div style="padding: 5px">
+                                <div id="sticky2" class="atip">
+                                </div>
+                            </div>
+                            <div class="stickystatus">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

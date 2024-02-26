@@ -1,0 +1,24 @@
+/*
+        function OpenActiveX(evt) {
+            try {
+
+                var chkPrintBarcode = document.getElementById('<%= chkPrintBarcode.ClientID%>');
+                var strPRN = document.getElementById('<%= HiddenField1.ClientID %>').value;
+                var BarCode = document.getElementById('<%= txtAssetCode.ClientID %>').value;
+
+                var index = strPRN.indexOf('{VAR_BARCODE}');
+                while (index != -1) {
+                    strPRN = strPRN.replace('{VAR_BARCODE}', BarCode);
+                    index = strPRN.indexOf('{VAR_BARCODE}');
+                }
+                if (chkPrintBarcode.checked == true) {
+                    var tag = null;
+                    var obj = new ActiveXObject("WebPrint.PrintImpl");
+                    var d = obj.PrintBarcode(strPRN, "Zebra TLP2844");
+                }
+            }
+            catch (Err) {
+                alert("Error : " + Err.description);
+            }
+        }
+        */
